@@ -1,82 +1,62 @@
 # VCAM
 
-VCAM is an open-source programmable AI camera that is powered by the Intel Movidius Myriad X Vision Processing Unit (VPU). It is a low-power System-on-Chip (SoC) that can be used for drones, intelligent cameras, VR/AR headsets, or other deep learning and AI vision application acceleration devices. Myriad X can deliver ten times the deep neural network (DNN) performance compared to Myriad 2 at the same power consumption. Myriad X reaches over trillion times per second (TOPS) peak DNN throughput based on the computational power of 4+ TOPS theoretically.
+VCAM is one of the Hydra AI camera prototype powered by Intel Movidius Myriad VPU, which is a low-power SoC that can be used for drones, intelligent cameras, VR/AR headsets, or other deep learning and AI vision application acceleration devices.
 
-- **Plug & Play**
+- Plug & Play
+  Users can quickly create your own versatile AI camera within 30 seconds by plugging a USB-C data interface into a computer and start developing.
 
-  Users can quickly create your own versatile AI camera within 30 seconds. Plug a USB-C data interface into a computer and start developing.
+- Standard Model
+  VCAM has the advantage of the integrated VPU chip,  which is compatible with the Paddle & OpenVINO models.
 
-- **OpenVINO Standard Model Ready-to-Use**
+- Multi-frameworks
+  VCAM supports Paddle, Caffe, ONNX, TensorFlow, MXNet and other deep learning frameworks for user-friendly development and use.
 
-  VCAM has the advantage of the Intel VPU chip,  which is compatible with the OpenVINO models.
+- High-quality Output
+  It has been factory video debugging to support 1920x1080 or 4K  resolution picture quality, support YUV420, H.264, H265,MJPEG and other video formats output.
 
-- **Support for Multiple Deep Learning Frameworks**
-
-  VCAM supports Caffe, ONNX, TensorFlow, MX Net and other deep learning frameworks for user-friendly development and use.
-
-- **High-quality Image Output**
-
-  It has been factory video debugging, can support 1920x1080 or 4K  resolution picture quality, support YUV420, H.264, H265,MJPEG and  other video formats output.
-
-- **Support Secondary Development**
-
-  VCAM provides a dedicated VCAM SDK development kit and related technical documentation, which supports C/C++/Python language. Users can easily call the relevant API interface to initiate camera parameter setting, model downloading, output video parameter setting, and quickly launch algorithm deployment of intelligent cameras. VCAM supports official models provided by OpenVINO and custom algorithm models.
+- Secondary Development
+  VCAM provides a dedicated SDK development kit and related technical documentation, which supports C/C++/Python language. Users can easily call the relevant API interface to initiate camera parameter setting, model downloading, output video parameter setting, and quickly launch algorithm deployment of intelligent cameras. VCAM supports official models provided by Paddle OpenVINO and custom algorithm models.
 
 <img src="./doc/pic/vcaml.jpg" height="20%" width="20%"> <img src="./doc/pic/vcam.jpg" height="20%" width="20%"> <img src="./doc/pic/vcamr.jpg" height="20%" width="20%">
 
-## ***SDK Usage***
 
-Supporting Products:
+## SDK
 
+Products:
 - VCAM DK
 - VCAM Lite
 - VCAM USB
 
-Supporting Platforms:
-
+Platforms:
 - Ubuntu 16.04, Ubuntu 18.04
 - Windows 10
 - Raspberry Pi
 - Arm Linux (Tool chain cross compilation is required)
 
-Supporting Languages:
-
+Languages:
 - C/C++
 - Python3.5, Python3.7
 
 
+## VCAM Operating Mechanism 
+From a model training environment to embedded deployment, it is a very important task, which requires mastering the framework of deep learning, such as commonly used: Caffe*, TensorFlow*, MXNet*, Kaldi*, etc.In addition, it is very important to master the deployed embedded platform. You need to understand the platform performance, system architecture characteristics, and then combine the platform characteristics to optimize the training model framework, and finally tune, transplant, and deploy to the embedded platform.
 
- ## VCAM operating mechanism 
-  From a model training environment to embedded deployment, it is a very important task, which requires mastering the framework of deep learning, such as commonly used: Caffe*, TensorFlow*, MXNet*, Kaldi*, etc.In addition, it is very important to master the deployed embedded platform. You need to understand the platform performance, system architecture characteristics, and then combine the platform characteristics to optimize the training model framework, and finally tune, transplant, and deploy to the embedded platform.
-
-  VCAM focuses on the rapid deployment of deep learning models, is compatible with Intel OpenVINO tools, and for embedded graphics and image application scenarios, it has completed the integration of different resolution sensors from 2MP to 20MP on end-point target devices, and the end-point target devices has realized the deployment of professional-level ISP. OpenVINO optimized converted model files can be dynamically downloaded to the end-point VCAM camera to achieve rapid deployment of deep learning models. VCAM has designed independent working mode, mixed development mode and co-processing compute stick mode to adapt to different work application scenarios.
+VCAM focuses on the rapid deployment of deep learning models, is compatible with Intel OpenVINO tools, and for embedded graphics and image application scenarios, it has completed the integration of different resolution sensors from 2MP to 20MP on end-point target devices, and the end-point target devices has realized the deployment of professional-level ISP. OpenVINO optimized converted model files can be dynamically downloaded to the end-point VCAM camera to achieve rapid deployment of deep learning models. VCAM has designed independent working mode, mixed development mode and co-processing compute stick mode to adapt to different work application scenarios.
 
 <img src="./doc/pic/sw_figure2.png" height="80%" width="80%">
 
 
-
-  ## Tutorials
-
-* [Code Structure](./doc/structure.md)
-
-* [Installation](./doc/installation.md)
-
-* [Learn to use](./example/how_to) 
-
-* [Model Base](./sdk/source/model/2020.3)  
-
-* [Download and convert alternative models](./sdk/tools)  
-
-* [More linkage demos](./example/linkage_demo)
-
-* [Viewer app](./apps/vcam_viewer)
-
-  
-
+## Tutorials
+- [Code Structure](./doc/structure.md)
+- [Installation](./doc/installation.md)
+- [Learn to use](./example/how_to) 
+- [Model Base](./sdk/source/model/2020.3)  
+- [Download and convert alternative models](./sdk/tools)  
+- [More linkage demos](./example/linkage_demo)
+- [Viewer app](./apps/vcam_viewer)
 
 
 ## Integrated AI model
-
 | Model Category       | Name                | Brief Introduction                                                     |
 | :---: | :---: | :---: |
 | Object Classification | classification-fp16 | ssd_mobilenet_v1_coco model can detect almost 90 objects |
@@ -92,4 +72,8 @@ Supporting Languages:
 | License Plate Recognition                                                     | vehicle-license-plate-detection-barrier-0106-fp16 | A MobileNetV2 + SSD-based vehicle and (Chinese) license plate detector for the "Barrier" use case. |
 | Face Attributes                                                     | interactive_face_detection_demo | This demo executes four parallel infer requests for the Age/Gender  Recognition, Head Pose Estimation, Emotions Recognition, and Facial  Landmarks Detection networks that run simultaneously |
 | Body Extraction                                                 | human-pose-estimation-0001-fp16 | A multi-person 2D pose estimation network (based on the OpenPose approach) with tuned MobileNet v1 as a feature extractor. |
+
+
+## Contact
+Please contact hydra@baidu.com for technical discussion
 
