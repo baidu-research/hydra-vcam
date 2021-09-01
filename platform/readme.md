@@ -51,4 +51,8 @@ FPC J3 Interface definition :
 | 29   | CAM_A_D3_P    | MIPI Data-3 P    | /                          |
 | 30   | CAM_A_D3_N    | MIPI Data-3 N    | /                          |
 
-## 
+
+
+## Contact
+- Please contact hydra@baidu.com for technical discussion with Baidu Research Institute
+- More OEM/ODM hardware information at www.openncc.com and service@eyecloud.tech for contact

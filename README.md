@@ -75,5 +75,5 @@ VCAM focuses on the rapid deployment of deep learning models, is compatible with
 
 
 ## Contact
-Please contact hydra@baidu.com for technical discussion
+Please contact hydra@baidu.com for technical discussion and service@eyecloud.tech for more OEM/ODM hardware information 
 
